@@ -5,6 +5,8 @@ import underline from '../../assets/nav_underline.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import menu_open from '../../assets/menu_open.svg'
 import menu_close from '../../assets/menu_close.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const Navbar = () => {
     const [menu,setMenu] = useState("home");
     const menuRef = useRef();
@@ -28,8 +30,13 @@ const Navbar = () => {
                 <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>setMenu("services")}>Learned</p></AnchorLink>{menu==="services"?<img src={underline} alt=""/>:<></>}</li>
                 <li><AnchorLink className='anchor-link' offset={50} href='#work'><p onClick={()=>setMenu("work")}>Portfolio</p></AnchorLink>{menu==="work"?<img src={underline} alt=""/>:<></>}</li>
                 <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact"?<img src={underline} alt=""/>:<></>}</li>
+                <li><a href=""></a></li>
             </ul>
-            <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect with me</AnchorLink></div>
+            <div className="nav-connect">
+            <a href="https://www.linkedin.com/in/kazi-kamal-aa33b2170/" target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faLinkedin} size="2x" />
+    </a>
+            </div>
         </div>
     );
 };
